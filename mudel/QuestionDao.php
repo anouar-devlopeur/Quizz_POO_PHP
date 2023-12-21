@@ -9,4 +9,12 @@ class QuestionDao{
         $this->question = new Question();
     }
     
+
+    /**
+     * Get the value of question
+     */ 
+    public function getQuestion()
+    {
+        return $this->question;
+    }
 }
