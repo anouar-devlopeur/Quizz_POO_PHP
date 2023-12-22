@@ -1,10 +1,11 @@
 <?php 
-require_once './Question.php';
+require_once 'Question.php';
 class Response{
     // `idResponcse`, `nomResponse`, `iscoercet`, `idQestion
     private $idResponcse;
     private $nomResponse;
     private $iscoercet;
+    private $explication;
     private Question $question;
     
     
@@ -80,5 +81,25 @@ class Response{
     public function getQuestion()
     {
         return $this->question;
+    }
+
+    /**
+     * Get the value of explication
+     */ 
+    public function getExplication()
+    {
+        return $this->explication;
+    }
+
+    /**
+     * Set the value of explication
+     *
+     * @return  self
+     */ 
+    public function setExplication($explication)
+    {
+        $this->explication = $explication;
+
+        return $this;
     }
 }

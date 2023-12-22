@@ -1,25 +1,27 @@
 <?php
-require_once './config/config.php';
+require_once __DIR__ . "./../config/config.php";
 
-class Database {
+class Database
+{
     private static $instance;
     private $connection;
 
-    private function __construct() {
+    private function __construct()
+    {
         $this->connection = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public static function getInstance() {
+    public static function getInstance()
+    {
         if (!self::$instance) {
             self::$instance = new Database();
         }
         return self::$instance;
     }
 
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->connection;
     }
 }
-
-?>

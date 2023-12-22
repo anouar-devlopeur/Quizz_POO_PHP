@@ -1,16 +1,16 @@
 <?php
-require_once './Theme.php';
+require_once __DIR__ . "./Theme.php";
 class Question
 {
   private $IdQuestion;
   private $NomQuestin;
-  private $description;
+
   private Theme $Theme;
-  
+
 
   public function __construct()
-  { 
-    
+  {
+    $this->Theme = new Theme();
   }
 
 
@@ -47,33 +47,15 @@ class Question
    *
    * @return  self
    */
-  public function setNomQuestin($NomQuestin)
+  public function setNomQuestin($newNomQuestin)
   {
-    $this->NomQuestin = $NomQuestin;
+    $this->NomQuestin = $newNomQuestin;
 
     return $this;
   }
 
-  /**
-   * Get the value of description
-   */
-  public function getDescription()
-  {
-    return $this->description;
-  }
 
-  /**
-   * Set the value of description
-   *
-   * @return  self
-   */
-  public function setDescription($description)
-  {
-    $this->description = $description;
-
-    return $this;
-  }
-
+ 
   /**
    * Get the value of Theme
    */

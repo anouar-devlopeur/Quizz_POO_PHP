@@ -1,5 +1,6 @@
 <?php 
 require_once './config/config.php';
+require_once './model/Theme.php';
 class ThemeDao{
     private $db;
     private Theme $theme;
