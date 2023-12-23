@@ -8,10 +8,10 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Quizz</title>
     <style>
-    body {
+    /* body {
 
         background-color: #756AB6;
-    }
+    } */
 
     .card {
 
