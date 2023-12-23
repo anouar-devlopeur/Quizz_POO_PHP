@@ -15,7 +15,8 @@ require_once '../include.php/header.php';
     <em class="fw-bold fs-1 fst-italic" style="color: #092635">Jouer : <?= $n ?></em>
 </h1>
 
-<form id="form" class="w-100 border rounded-2" style="height: 100vh; background-color: #7BD3EA">
+<form id="form" class="w-100 border rounded-2" style="height: 100vh; background-color: #7BD3EA" method="post"
+    action="../controler/ControlerFinishQuiz.php">
     <h2 class="text-center mt-2" style="font-size:400%">Question </h2>
     <?php foreach ($RQ as $rq) : ?>
     <!-- affiche question -->
@@ -29,7 +30,8 @@ require_once '../include.php/header.php';
             <div onclick="checkedBtn('suivantButton<?= $rq['question']['id'] ?>', 'res<?= $r['idResponcse'] ?>')"
                 class="d-flex align-items-center gap-4 btn border-0 rounded-2 check"
                 style="width: 45%; background-color:#AC87C5">
-                <input type="radio" name="response[]" value="<?= $r['idResponcse'] ?>" id="res<?= $r['idResponcse'] ?>">
+                <input type="radio" name="response<?= $rq['question']['id'] ?>" value=" <?= $r['idResponcse'] ?>"
+                    id="res<?= $r['idResponcse'] ?>">
                 <h4 class="fs-5"><?= $r['nomResponse'] ?></h4>
             </div>
             <?php endforeach; ?>
@@ -63,7 +65,6 @@ function checkedBtn(Button, res) {
     let suivantButton = document.getElementById(Button);
     suivantButton.style.display = 'block';
     let inputRes = document.getElementById(res);
-    console.log(inputRes);
     inputRes.click();
 }
 // next question 
@@ -77,12 +78,6 @@ function nextQ(i, res) {
     i++;
     let nextDivQ = document.getElementById('q' + i);
     nextDivQ.style.display = 'block';
-    let inputRes = document.getElementById(res);
-    value = inputRes.value;
-    // if (parseInt(value) == 1) {
-    //     score++;
-    // }
-    console.log(value);
 }
 </script>
 

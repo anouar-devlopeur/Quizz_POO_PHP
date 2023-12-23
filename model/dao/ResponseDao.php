@@ -16,10 +16,26 @@ class ResponseDao{
     {
         return $this->response;
     }
+    public function getResonseCorrectByIdQ($idQ){
+        $req = "SELECT * FROM response WHERE idQestion=:idQ AND iscoercet = 1";
+        $res = $this->db->prepare($req);
+        $res->bindParam(":idQ", $idQ, PDO::PARAM_INT);
+        $res->execute();
+    
+        $row = $res->fetch();
+        return $row;
+    }
+    public function getResonseById($id){
+        $req = "SELECT * FROM response WHERE idResponcse=:id";
+        $res = $this->db->prepare($req);
+        $res->bindParam(":id", $id, PDO::PARAM_INT);
+        $res->execute();
+    
+        $row = $res->fetch();
+        return $row;
+    }
     public function Get_Response($id_q)
     {
-        // `idResponcse`, `nomResponse`, `iscoercet`, `idQestion`, `explication`
-        // $responsIdQuestion = $respons->getQuestion()->getIdQuestion();
         $req = "SELECT idResponcse,nomResponse,iscoercet,explication FROM response WHERE idQestion=:idQ";
         $res = $this->db->prepare($req);
         $res->bindParam(":idQ", $id_q, PDO::PARAM_INT);
