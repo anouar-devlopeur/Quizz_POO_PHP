@@ -1,6 +1,7 @@
 <?php 
 require_once './controler/ControlerStart.php';
 StartShow();
+
 include './include.php/header.php';
 ?>
 
@@ -14,12 +15,12 @@ include './include.php/header.php';
 
     </div>
     <div class="my-3">
-        <h2 class="fs-1   fw-bold" style="color:#756AB6">Pseudo Name</h2>
+        <h2 class="fs-1   fw-bold" style="color:#FFF">Pseudo Name</h2>
 
         <form method="post">
             <input type=" text" class="form-control my-5" placeholder="Recipient's username"
                 aria-label="Recipient's username" aria-describedby="button-addon2" name="name" required>
-            <button type="submit" class="btn btn-outline-success px-5" type="button" id="button-addon2"
+            <button type="submit" class="btn btn-success borde px-5" type="button" id="button-addon2"
                 name="Start">Start</button>
 
         </form>

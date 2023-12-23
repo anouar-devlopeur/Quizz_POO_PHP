@@ -4,6 +4,7 @@ require_once '../controler/ControlerQuestion.php';
 require_once '../controler/ControlerResponse.php';
 
 $RQ = ShowResponse();
+
 $n = Session_player();
 
 require_once '../include.php/header.php';

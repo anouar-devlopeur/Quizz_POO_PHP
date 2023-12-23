@@ -40,7 +40,7 @@ class QuestionDao
         
             array_push($questions, $question);
         }
-        
+        // shuffle($questions);   
         return $questions;
       
     } 
