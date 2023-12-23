@@ -44,6 +44,7 @@ class QuestionDao
         return $questions;
       
     } 
+    // id
     public function getId_Question()
 {
     $req = $this->db->prepare('SELECT IdQuestion FROM question  ');

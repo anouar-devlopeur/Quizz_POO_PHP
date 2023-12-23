@@ -29,7 +29,7 @@ require_once '../include.php/header.php';
             <div onclick="checkedBtn('suivantButton<?= $rq['question']['id'] ?>', 'res<?= $r['idResponcse'] ?>')"
                 class="d-flex align-items-center gap-4 btn border-0 rounded-2 check"
                 style="width: 45%; background-color:#AC87C5">
-                <input type="radio" name="response[]" value="<?= $r['iscoercet'] ?>" id="res<?= $r['idResponcse'] ?>">
+                <input type="radio" name="response[]" value="<?= $r['idResponcse'] ?>" id="res<?= $r['idResponcse'] ?>">
                 <h4 class="fs-5"><?= $r['nomResponse'] ?></h4>
             </div>
             <?php endforeach; ?>
@@ -63,6 +63,7 @@ function checkedBtn(Button, res) {
     let suivantButton = document.getElementById(Button);
     suivantButton.style.display = 'block';
     let inputRes = document.getElementById(res);
+    console.log(inputRes);
     inputRes.click();
 }
 // next question 
@@ -78,10 +79,10 @@ function nextQ(i, res) {
     nextDivQ.style.display = 'block';
     let inputRes = document.getElementById(res);
     value = inputRes.value;
-    if (parseInt(value) == 1) {
-        score++;
-    }
-    console.log(score);
+    // if (parseInt(value) == 1) {
+    //     score++;
+    // }
+    console.log(value);
 }
 </script>
 
