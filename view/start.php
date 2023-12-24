@@ -1,5 +1,6 @@
 <?php
 require_once '../controler/ControlerStart.php';
+require_once '../controler/Session_Player.php';
 require_once '../controler/ControlerQuestion.php';
 require_once '../controler/ControlerResponse.php';
 require_once '../include.php/header.php';
@@ -21,7 +22,7 @@ $n = Session_player();
     <em class="fw-bold fs-1 fst-italic" style="color: #092635">Jouer : <?= $n ?></em>
 </h1>
 
-<form id="form" class="w-100 border rounded-2" style="height: 80vh; background-color: #7BD3EA" method="post"
+<form id="form" class="w-100 border rounded-2" style="height: 100vh; background-color: #7BD3EA" method="post"
     action="../controler/ControlerFinishQuiz.php">
     <h2 class="mx-auto text-center pb-2 mt-1 rounded w-25" style="font-size:300%;background-color: #756AB6;">
         Question
