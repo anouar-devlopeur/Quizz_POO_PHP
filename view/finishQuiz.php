@@ -3,6 +3,7 @@
  require_once '../controler/Session_Player.php';
 
 $n = Session_player();
+
 require_once '../include.php/header.php';
 ?>
 <h1 class="text-center fw-bold m-0 py-2 text-white" style="background-color:#756AB6;">
@@ -40,11 +41,11 @@ require_once '../include.php/header.php';
 
             <h6 class="mb-0"><?=$varlidation?></h6>
 
-            <div class="buttons px-4 mb-2">
+            <form class="buttons px-4 mb-2" method="post">
 
-                <button class="btn btn-warning btn-block rating-submit">FINISH Quiz</button>
+                <button class="btn btn-warning btn-block rating-submit" name="LogOut">FINISH Quiz</button>
 
-            </div>
+            </form>
 
 
         </div>

@@ -35,4 +35,5 @@
 
 
      require_once("../view/finishQuiz.php");
+
 ?>
