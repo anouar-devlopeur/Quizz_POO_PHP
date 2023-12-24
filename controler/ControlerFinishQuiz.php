@@ -29,8 +29,8 @@
     } else {
         $color = 'danger';
     }
-  echo('<pre>');var_dump('true:',$responsTrue,'---------------','false:',$responsFalse,'------------------','just',$responstrueOfResponsFalse,'score: ',$score,"varlidation ",$varlidation);
-  echo('<pre>');var_dump('true:',$responsTrue[0]["explication"] );die();
+//   echo('<pre>');var_dump('true:',$responsTrue,'---------------','false:',$responsFalse,'------------------','just',$responstrueOfResponsFalse,'score: ',$score,"varlidation ",$varlidation);
+//   echo('<pre>');var_dump('true:',$responsTrue[0]["explication"] );die();
 
 
      require_once("../view/finishQuiz.php");

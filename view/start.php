@@ -2,27 +2,36 @@
 require_once '../controler/ControlerStart.php';
 require_once '../controler/ControlerQuestion.php';
 require_once '../controler/ControlerResponse.php';
+require_once '../include.php/header.php';
 
 $RQ = ShowResponse();
+$isshhuffled = shuffle($RQ);
+
+$raaa = $RQ;
+$index = 0;
 
 $n = Session_player();
 
-require_once '../include.php/header.php';
+
 ?>
 
-<h1 class="text-center fw-bold m-0 py-5 text-white" style="background-color:#756AB6;">
+<h1 class="text-center fw-bold m-0 py-3 text-white" style="background-color:#756AB6;">
     Online Quiz Application
     <br>
     <em class="fw-bold fs-1 fst-italic" style="color: #092635">Jouer : <?= $n ?></em>
 </h1>
 
-<form id="form" class="w-100 border rounded-2" style="height: 100vh; background-color: #7BD3EA" method="post"
+<form id="form" class="w-100 border rounded-2" style="height: 80vh; background-color: #7BD3EA" method="post"
     action="../controler/ControlerFinishQuiz.php">
-    <h2 class="text-center mt-2" style="font-size:400%">Question </h2>
-    <?php foreach ($RQ as $rq) : ?>
+    <h2 class="mx-auto text-center pb-2 mt-1 rounded w-25" style="font-size:300%;background-color: #756AB6;">
+        Question
+    </h2>
+
+    <?php foreach ($raaa as $rq) : ?>
+    <?php $index++ ?>
     <!-- affiche question -->
-    <div id="q<?= $rq['question']['id'] ?>">
-        <h3 class="w-75 text-center container text-white">
+    <div class="question_id" id="q<?= $rq['question']['id'] ?>">
+        <h3 class="text-center container   my-3" style=" width:100%">
             <?= $rq['question']['questionName'] ?>
         </h3>
         <div class="d-flex flex-wrap w-100 m-auto mt-5 pt-2 gap-5 text-center justify-content-center">
@@ -38,17 +47,17 @@ require_once '../include.php/header.php';
             <?php endforeach; ?>
         </div>
 
-        <h2 class="text-center mt-2 fs-1"><?= $rq['question']['id'] ?>/10</h2>
-        <?php if ($rq['question']['id'] < 10) : ?>
+        <h2 class="text-center mt-2 fs-1 "><?= $index ?>/10</h2>
+        <?php if ($index < 10 ) : ?>
         <!-- suivant -->
         <span id="suivantButton<?= $rq['question']['id'] ?>"
             onclick="nextQ(<?= $rq['question']['id'] ?>, 'res<?= $r['idResponcse'] ?>')"
-            class="btn border-0 rounded-2 bg-success float-end me-5 mt-5 w-25 aff" style="display: none;">Suivant</span>
+            class="btn border-0 rounded-2 bg-success float-end me-5 mt-2 w-25 aff" style="display: none;">Suivant</span>
         <?php else : ?>
         <!-- button valider -->
         <span onclick="nextQ(<?= $rq['question']['id'] ?>, 'res<?= $r['idResponcse'] ?>')"
             id="suivantButton<?= $rq['question']['id'] ?>"
-            class="btn border-0 rounded-2 bg-success float-end me-5 mt-5 w-25 aff" style="display: none;">Valider</span>
+            class="btn border-0 rounded-2 bg-success float-end me-5 mt-2 w-25 aff" style="display: none;">Valider</span>
         <?php endif; ?>
     </div>
     <?php endforeach; ?>
@@ -57,10 +66,31 @@ require_once '../include.php/header.php';
 <script>
 var score = 0;
 // question display
-for (let i = 2; i <= 10; i++) {
-    let divQ = document.getElementById('q' + i);
-    divQ.style.display = 'none';
-}
+
+//question_id
+
+var questions = document.getElementsByClassName("question_id");
+// console.log(typeof questions);
+// console.log(questions);
+var arr = [].slice.call(questions);
+
+arr.forEach(element => {
+    element.style.display = 'none'
+});
+
+
+count = 0;
+arr[count].style.display = 'block'
+
+// for (let i = count; i <= 10; i++) {
+//     let divQ = document.getElementById('q' + i);
+//     divQ.style.display = 'none';
+// }
+
+// for (let i = 2; i <= 10; i++) {
+//     let divQ = document.getElementById('q' + i);
+//     divQ.style.display = 'none';
+// }
 // check response affiche button suivant
 function checkedBtn(Button, res) {
     let suivantButton = document.getElementById(Button);
@@ -70,15 +100,21 @@ function checkedBtn(Button, res) {
 }
 // next question 
 function nextQ(i, res) {
-    if (i == 10) {
+
+
+    if (count == arr.length - 1) {
         document.getElementById('form').submit();
+        return
     }
 
-    let currentDivQ = document.getElementById('q' + i);
-    currentDivQ.style.display = 'none';
+    // let currentDivQ = document.getElementById('q' + i);
+    arr[count].style.display = 'none'
+    // currentDivQ.style.display = 'none';
     i++;
-    let nextDivQ = document.getElementById('q' + i);
-    nextDivQ.style.display = 'block';
+    // let nextDivQ = document.getElementById('q' + i);
+    // nextDivQ.style.display = 'block';
+    count = count + 1;
+    arr[count].style.display = 'block'
 }
 </script>
 

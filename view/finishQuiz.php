@@ -2,7 +2,7 @@
 
 require_once '../controler/ControlerStart.php';
 require_once '../include.php/header.php';
-// $n = Session_player();
+$n = Session_player();
 ?>
 <section class="  w-100 " style=" height: 100vh; background-color:#756AB6;">
 
@@ -12,24 +12,17 @@ require_once '../include.php/header.php';
 
             <div class=" buttons px-4 mt-0">
 
-                <button class="btn btn-success btn-block rating-submit">Question True</button><br>
+                <button id="true" class="btn btn-success btn-block rating-submit">Question True</button><br>
 
-                <div class="bg-white w-100 mt-2 rounded ps-3">hhhhhhhhhhHHHH
-                    hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhHHHHHHHHH
-                    hhhhhhhhhhHHHHH
-                    hhhhhhhhhhHHHHHHHHHHH
-                    hhhhhhhhhhhhhhhhhhhh</div>
+                <div class="bg-white w-100 mt-2 rounded ps-3"></div>
             </div>
 
 
             <div class=" buttons px-4 mt-0">
 
-                <button class="btn btn-danger btn-block rating-submit">Question Flase</button>
-                <div class="bg-white w-100 mt-2 rounded ps-3">hhhhhhhhhhHHHH
-                    hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhHHHHHHHHH
-                    hhhhhhhhhhHHHHH
-                    hhhhhhhhhhHHHHHHHHHHH
-                    hhhhhhhhhhhhhhhhhhhh</div>
+                <button id="false" class="btn btn-danger btn-block rating-submit">Question Flase</button>
+                <div class="bg-white w-100 mt-2 rounded ps-3">
+                </div>
             </div>
 
 
@@ -46,9 +39,9 @@ require_once '../include.php/header.php';
 
                 <span class="dot"></span>
 
-                <span class="name mb-1 fw-500 fs-3">
-                    <!-- <?=$n?> -->
-                </span>
+                <h2 class="name mb-1 fw-500 fs-3">
+                    <?=$n?>
+                </h2>
 
 
 
@@ -57,18 +50,18 @@ require_once '../include.php/header.php';
                     <span class="d-block">
                         <small class="text-truncate  fs-2">Votre Score :</small><br>
                         <small class="text-truncate fs-3">
-                            20%
-                            <!-- <?=$score?> -->
+
+                            <?=$score?>
                         </small>
                     </span>
 
                 </div>
 
-                <!-- <div class="rate bg-<?=$color?> py-3 text-white mt-3"> -->
-                <div class="rate bg-success py-3 text-white mt-3">
-                    <h4 class="mb-0"> Validation</h4>
+                <div class="rate bg-<?=$color?> py-3 text-white mt-3">
+                    <!-- <div class="rate bg-success py-3 text-white mt-3"> -->
+                    <!-- <h4 class="mb-0"> Validation</h4> -->
 
-                    <!-- <h6 class="mb-0"><?=$varlidation?></h6> -->
+                    <h6 class="mb-0"><?=$varlidation?></h6>
 
                     <div class="buttons px-4 mt-0">
 
