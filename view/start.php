@@ -23,6 +23,10 @@ $n = Session_player();
     <em class="fw-bold fs-1 fst-italic" style="color: #092635">Jouer :
         <?= $n ?>
     </em>
+    <div class="progress w-25 mx-auto mt-1">
+        <div class="progress-bar" style="width:65%"></div>
+    </div>
+    </div>
 </h1>
 
 <form id="form" class="w-100 border rounded-2" style="height: 100vh; background-color: #7BD3EA" method="post"

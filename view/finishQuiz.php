@@ -10,7 +10,10 @@ require_once '../include.php/header.php';
 ?>
 <h1 class="text-center fw-bold m-0 py-2 text-white" style="background-color:#756AB6;">
     Online Quiz Application
-
+    <div class="progress w-25 mx-auto mt-2">
+        <div class="progress-bar" style="width:100%"></div>
+    </div>
+    </div>
 
 </h1>
 <div class="d-flex justify-content-center  " style="background-color:#C499F3; height: 75vh;">

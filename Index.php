@@ -5,9 +5,13 @@
 include './include.php/header.php';
 ?>
 
-<h1 class="text-center  fw-bold   py-5 text-white mb-3" style=" background-color:#756AB6;">Online Quiz Application
+<h1 class="text-center  fw-bold   py-3 text-white mb-3" style=" background-color:#756AB6;">Online Quiz Application
     <br>
     <em class=" fw-bold fs-1 fst-italic">AWS</em>
+    <div class="progress w-25 mx-auto mt-1">
+        <div class="progress-bar" style="width:35%"></div>
+    </div>
+    </div>
 </h1>
 <section class=" d-flex justify-content-evenly gap-5   container mb-3"
     style=" height: 60vh; border: solid #756AB6;border-radius: 15% 0%;">
