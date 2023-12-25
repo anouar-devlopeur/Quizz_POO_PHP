@@ -80,6 +80,7 @@ require_once '../include.php/header.php';
                         <div class="card-block p-3">
                             <h4 class="card-title ">Question <?=$response["idQestion"]?>
                                 :</h4>
+                            <span> <?= $response["NomQuestin"]?> </span>
                             <h6 class="card-subtitle text-muted">Reponse : <?= $response["nomResponse"]?></h6>
                             <p class="card-text p-y-1"><?= $response["explication"] ?></p>
                         </div>
@@ -101,6 +102,8 @@ require_once '../include.php/header.php';
                     <div class="card">
                         <div class="card-block p-3">
                             <h4 class="card-title">Question <?=$response["idQestion"]?>:</h4>
+                            <span> <?= $response["NomQuestin"]?> </span>
+
                             <h6 class="card-subtitle text-muted">Reponse : <?= $response["nomResponse"]?></h6>
                             <p class="card-text p-y-1"><?= $response["explication"] ?></p>
                         </div>
@@ -120,6 +123,8 @@ require_once '../include.php/header.php';
                     <div class="card">
                         <div class="card-block p-3">
                             <h4 class="card-title">Question <?=$response["idQestion"]?>:</h4>
+                            <span> <?= $response["NomQuestin"]?> </span>
+
                             <h6 class="card-subtitle text-muted">Reponse : <?= $response["nomResponse"]?></h6>
                             <p class="card-text p-y-1"><?= $response["explication"] ?></p>
                         </div>
