@@ -21,7 +21,7 @@ class QuestionDao
     }
     public function get_Question()
     {
-        $req = $this->db->prepare('SELECT * FROM question');
+        $req = $this->db->prepare('SELECT * FROM question,theme where question.idTheme=theme.idThme');
         $req->execute();
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
      
@@ -31,16 +31,20 @@ class QuestionDao
             $q = new Question();
             $q->setIdQuestion($row['IdQuestion']);
             $q->setNomQuestin($row['NomQuestin']);
+            $q->getTheme()->setNomTheme($row['nomTheme']);
             $id=$q->getIdQuestion();
             $questionName=$q->getNomQuestin();
+            $theme=$q->getTheme()->getNomTheme();
             $question=[
                 'id'=> $id,
                 'questionName'=> $questionName,
+                'theme'=> $theme,
             ];
         
             array_push($questions, $question);
         }
-        // shuffle($questions);   
+        // shuffle($questions); 
+        // var_dump($questions); 
         return $questions;
       
     } 
@@ -65,4 +69,4 @@ class QuestionDao
 
 
 // $qu = new QuestionDao();
-// $qu->getId_Question();
+// $qu->get_Question();

@@ -14,12 +14,15 @@ $index = 0;
 $n = Session_player();
 
 
+
 ?>
 
 <h1 class="text-center fw-bold m-0 py-3 text-white" style="background-color:#756AB6;">
     Online Quiz Application
     <br>
-    <em class="fw-bold fs-1 fst-italic" style="color: #092635">Jouer : <?= $n ?></em>
+    <em class="fw-bold fs-1 fst-italic" style="color: #092635">Jouer :
+        <?= $n ?>
+    </em>
 </h1>
 
 <form id="form" class="w-100 border rounded-2" style="height: 100vh; background-color: #7BD3EA" method="post"
@@ -35,6 +38,7 @@ $n = Session_player();
         <h3 class="text-center container   my-3" style=" width:100%">
             <?= $rq['question']['questionName'] ?>
         </h3>
+        <h4 class="text-center fs-3 text-white"> <?= $rq['question']['theme'] ?></h4>
         <div class="d-flex flex-wrap w-100 m-auto mt-5 pt-2 gap-5 text-center justify-content-center">
             <!-- affiche response -->
             <?php foreach ($rq['respons'] as $r) : ?>

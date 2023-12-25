@@ -6,13 +6,14 @@ function ShowResponse()
 {
     $question = new QuestionDao();
     $questions = $question->get_Question();
+   
     $questions_respons = array();
 
     $respons = new ResponseDao();
 
     for ($i = 0; $i < count($questions); $i++) {
         $rows = $respons->Get_Response($questions[$i]["id"]);
-
+      
         $question_respons = [
             "question" => $questions[$i],
             "respons" => $rows

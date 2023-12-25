@@ -8,3 +8,5 @@ function Session_player()
     $name = isset($_SESSION['player']) ? $_SESSION['player'] : "";
     return $name;
 }
+
+ 

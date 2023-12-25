@@ -34,6 +34,7 @@
 //   die();
 
 
+
      require_once("../view/finishQuiz.php");
 
 ?>
