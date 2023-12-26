@@ -81,7 +81,8 @@ require_once '../include.php/header.php';
                             <h4 class="card-title ">Question <?=$response["idQestion"]?>
                                 :</h4>
                             <span> <?= $response["NomQuestin"]?> </span>
-                            <h6 class="card-subtitle text-muted">Reponse : <?= $response["nomResponse"]?></h6>
+                            <h6 class="card-subtitle  text-success">Reponse : <?= $response["nomResponse"]?>
+                            </h6>
                             <p class="card-text p-y-1"><?= $response["explication"] ?></p>
                         </div>
                     </div>
@@ -104,7 +105,8 @@ require_once '../include.php/header.php';
                             <h4 class="card-title">Question <?=$response["idQestion"]?>:</h4>
                             <span> <?= $response["NomQuestin"]?> </span>
 
-                            <h6 class="card-subtitle text-muted">Reponse : <?= $response["nomResponse"]?></h6>
+                            <h6 class="card-subtitle  text-danger">Reponse : <?= $response["nomResponse"]?>
+                            </h6>
                             <p class="card-text p-y-1"><?= $response["explication"] ?></p>
                         </div>
                     </div>
@@ -125,7 +127,8 @@ require_once '../include.php/header.php';
                             <h4 class="card-title">Question <?=$response["idQestion"]?>:</h4>
                             <span> <?= $response["NomQuestin"]?> </span>
 
-                            <h6 class="card-subtitle text-muted">Reponse : <?= $response["nomResponse"]?></h6>
+                            <h6 class="card-subtitle  text-info">Reponse : <?= $response["nomResponse"]?>
+                            </h6>
                             <p class="card-text p-y-1"><?= $response["explication"] ?></p>
                         </div>
                     </div>
