@@ -1,8 +1,10 @@
 <?php
 require_once '../model/dao/QuestionDao.php';
 require_once '../model/dao/ResponseDao.php';
+class ControlerResponse{
+    
 
-function ShowResponse()
+public function ShowResponse()
 {
     $question = new QuestionDao();
     $questions = $question->get_Question();
@@ -29,3 +31,4 @@ function ShowResponse()
     return $questions_respons;
 }
 // $n=ShowResponse();
+}

@@ -4,8 +4,9 @@ require_once '../controler/Session_Player.php';
 require_once '../controler/ControlerQuestion.php';
 require_once '../controler/ControlerResponse.php';
 require_once '../include.php/header.php';
-
-$RQ = ShowResponse();
+$s=new ControlerResponse();
+$RQ=$s->ShowResponse();
+// $RQ = ShowResponse();
 $isshhuffled = shuffle($RQ);
 
 $raaa = $RQ;
