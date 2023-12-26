@@ -82,6 +82,8 @@ var score = 0;
 var questions = document.getElementsByClassName("question_id");
 // console.log(typeof questions);
 // console.log(questions);
+// equivalent to using Array.from(questions)
+// Now 'questionsArray' is a proper array containing the elements from the NodeList.
 var arr = [].slice.call(questions);
 
 arr.forEach(element => {
@@ -117,12 +119,11 @@ function nextQ(i, res) {
         return
     }
 
-    // let currentDivQ = document.getElementById('q' + i);
+    //count =0
     arr[count].style.display = 'none'
-    // currentDivQ.style.display = 'none';
+    // idquestion
     i++;
-    // let nextDivQ = document.getElementById('q' + i);
-    // nextDivQ.style.display = 'block';
+
     count = count + 1;
     arr[count].style.display = 'block'
 }
