@@ -12,6 +12,7 @@
             array_push($responsTrue,$row);
         }
     }
+    // false jussifier
     for ($i = 0; $i < count($responsFalse); $i++) { 
         $row=$responsDao->getResonseCorrectByIdQ($responsFalse[$i]["idQestion"]);
         array_push($responstrueOfResponsFalse,$row);
