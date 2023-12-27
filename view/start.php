@@ -119,11 +119,18 @@ function nextQ(i, res) {
         return
     }
 
+
+
+
+
+
     //count =0
     arr[count].style.display = 'none'
     // idquestion
-    i++;
+    console.log(i);
 
+    i++;
+    // console.log(i);
     count = count + 1;
     arr[count].style.display = 'block'
 }
